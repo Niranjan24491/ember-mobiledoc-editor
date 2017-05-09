@@ -6,6 +6,15 @@ export default Ember.Controller.extend({
   actions: {
     onChange() {
       this.incrementProperty('changeCount');
+    },
+
+    didCreateEditor(editor) {
+      debugger;
+      editor.run(postEditor => {
+        let tail = editor.post.tailPosition();
+        postEditor.editor.insertText(tail, 'some random text');
+      });
     }
+
   }
 });

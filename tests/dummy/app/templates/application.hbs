@@ -1,3 +1,13 @@
-{{mobiledoc-editor on-change=(action 'onChange')}}
+{{#mobiledoc-editor did-create-editor=(action 'didCreateEditor') as |editor|}}
+  {{#mobiledoc-markup-button editor=editor for="b"}}
+    <b>B</b>
+  {{/mobiledoc-markup-button}}
 
-<div id="has-changed">HAS CHANGED {{changeCount}}</div>
+  {{#mobiledoc-markup-button editor=editor for="i"}}
+    <i>I</i>
+  {{/mobiledoc-markup-button}}
+
+  {{#mobiledoc-markup-button editor=editor for="u"}}
+    <u>U</u>
+  {{/mobiledoc-markup-button}}
+{{/mobiledoc-editor}}
